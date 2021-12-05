@@ -60,7 +60,7 @@ class CreateAccountBanner extends StatelessWidget {
                     ),
                     Flexible(
                       child: Text(
-                        'Seja bem vindo, preencha seus dados para começar ',
+                        'Vamos criar uma conta para sua ONG receber doações, preencha seus dados para começar ',
                         style: TextStyle(
                           fontSize: 16.0,
                           fontWeight: FontWeight.normal,

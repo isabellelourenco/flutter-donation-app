@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_donation_app/constants/constants.dart';
+import 'package:flutter_donation_app/screens/first_screen/first_screen.dart';
 
 class UpdateOngBanner extends StatelessWidget {
   @override
@@ -71,6 +72,33 @@ class UpdateOngBanner extends StatelessWidget {
                 ),
               ),
               Container(
+                  width: 500,
+                  padding: EdgeInsets.only(
+                    left: kDefaultPadding + 10,
+                    right: kDefaultPadding + 20,
+                    bottom: kDefaultPadding,
+                    top: kDefaultPadding + 20,
+                  ),
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => FirstPage()));
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          'Sair',
+                          style: TextStyle(
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.cyan[800],
+                          ),
+                        ),
+                      ],
+                    ),
+                  )),
+              Container(
                 height: 160,
                 padding: EdgeInsets.only(
                   left: kDefaultPadding + 10,
@@ -79,7 +107,9 @@ class UpdateOngBanner extends StatelessWidget {
                   top: kDefaultPadding + 30,
                 ),
                 child: Row(
-                  children: <Widget>[Image.asset("assets/images/appicon.png")],
+                  children: <Widget>[
+                    Image.asset("assets/images/appicon.png"),
+                  ],
                 ),
               ),
             ],

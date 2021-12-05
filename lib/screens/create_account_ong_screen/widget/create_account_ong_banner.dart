@@ -49,7 +49,7 @@ class CreateOngBanner extends StatelessWidget {
                       child: Row(
                         children: <Widget>[
                           Text(
-                            'ONG',
+                            'Cadastre uma ONG',
                             style: TextStyle(
                               fontSize: 24.0,
                               fontWeight: FontWeight.bold,

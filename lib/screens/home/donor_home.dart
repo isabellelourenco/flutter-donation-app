@@ -4,53 +4,51 @@ import 'package:flutter_donation_app/models/ong.dart';
 import 'package:flutter_donation_app/screens/home/widget/list_title.dart';
 import 'package:flutter_donation_app/screens/home/widget/ong_item.dart';
 import 'package:flutter_donation_app/screens/home/widget/top_bar.dart';
-class DonorHomeScreen extends StatelessWidget {
+import 'package:flutter_donation_app/screens/update_account_donnor/update_account_donnor.dart';
+import 'package:flutter_donation_app/service/http_service.dart';
+
+class DonorHomeScreen extends StatefulWidget {
+  @override
+  _DonorHomeScreenState createState() => _DonorHomeScreenState();
+}
+
+class _DonorHomeScreenState extends State<DonorHomeScreen> {
+  final HttpService httpService = HttpService();
+
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            TopBar(),
-            ListTitle('Lista de ONGs'),
-            OngItem(Ong(
-              'Amigos do Bem',
-              'Existem muitas variações disponíveis de passagens de Lorem Ipsum, mas a maioria sofreu algum tipo de alteração, seja por inserção de passagens com humor',
-              'assets/images/amigos.png',
-              '(81)99347-4343',
-              'ong@gmail.com',
-              'www.google.com',
-              '23232323233',
-              'Itau',
-              '12312313',
-              '1231231'
-              ),
-            ),
-          ],
+        child: SizedBox(
+          height: size.height,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TopBar(),
+              ListTitle('Lista de ONGs'),
+              FutureBuilder(
+                  future: httpService.fetchOngs(),
+                  builder: (BuildContext context,
+                      AsyncSnapshot<List<Ong>> snapshot) {
+                    if (snapshot.hasData) {
+                      List<Ong>? posts = snapshot.data;
+                      print("tentando montar o componente . . . ");
+                      return Expanded(
+                        child: ListView(
+                          children:
+                              posts!.map((Ong ong) => OngItem(ong)).toList(),
+                        ),
+                      );
+                    } else {
+                      return Center(child: CircularProgressIndicator());
+                    }
+                  }),
+            ],
+          ),
         ),
       ),
-      bottomNavigationBar: _buildBottomNavigationBar(),
-    );
-  }
-
-  BottomNavigationBar _buildBottomNavigationBar() {
-    return BottomNavigationBar(
-      type: BottomNavigationBarType.fixed,
-      backgroundColor: kBackgroundColor,
-      showSelectedLabels: false,
-      showUnselectedLabels: false,
-      items: [
-        BottomNavigationBarItem(
-          label: 'home',
-          icon: Image.asset('assets/icons/home.png', width: 25),
-        ),
-        BottomNavigationBarItem(
-          label: 'user',
-          icon: Image.asset('assets/icons/user.png', width: 25),
-        ),
-      ],
     );
   }
 }

@@ -13,9 +13,8 @@ class OngItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(
-        left: kDefaultPadding,
-      ),
+      padding:
+          EdgeInsets.only(left: kDefaultPadding, bottom: kDefaultPadding - 10),
       child: Row(
         children: [
           Container(
@@ -74,7 +73,7 @@ class OngItem extends StatelessWidget {
                           children: <Widget>[
                             Expanded(
                               child: Text(
-                                ong.ongResume,
+                                ong.ongDescription,
                                 maxLines: 3,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
@@ -92,9 +91,7 @@ class OngItem extends StatelessWidget {
                 Container(
                   height: 50,
                   width: 170,
-                  padding: EdgeInsets.only(
-                    top: kDefaultPadding - 8,
-                  ),
+                  padding: EdgeInsets.only(),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -110,7 +107,7 @@ class OngItem extends StatelessWidget {
                             ),
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => OngDetails()));
+                                  builder: (context) => OngDetails(ong)));
                             },
                             child: Text('Ver +',
                                 style: TextStyle(
@@ -130,7 +127,7 @@ class OngItem extends StatelessWidget {
                             ),
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => DonateDetails()));
+                                  builder: (context) => DonateDetails(ong)));
                             },
                             child: Text('Doar',
                                 style: TextStyle(

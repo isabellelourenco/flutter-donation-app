@@ -21,7 +21,7 @@ class OngBanner extends StatelessWidget {
                     bottomLeft: Radius.circular(40),
                     bottomRight: Radius.circular(40),
                   ),
-                  child: Image.asset(ong.ongImg,fit: BoxFit.fitHeight),
+                  child: Image.asset(ong.ongImg, fit: BoxFit.fitHeight),
                 ),
               ),
               Container(
@@ -31,7 +31,7 @@ class OngBanner extends StatelessWidget {
           ),
           Positioned(
             bottom: 0,
-            right:40,
+            right: 40,
             child: Container(
               height: 50,
               width: 110,
@@ -45,7 +45,7 @@ class OngBanner extends StatelessWidget {
                 ),
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => DonateDetails()));
+                      builder: (context) => DonateDetails(ong)));
                 },
                 child: Text(
                   'Doar',
@@ -71,12 +71,12 @@ class OngBanner extends StatelessWidget {
               ),
               child: IconButton(
                 icon: Icon(
-                  Icons.arrow_back_ios, 
+                  Icons.arrow_back_ios,
                   color: Colors.white,
                 ),
                 iconSize: 20,
                 onPressed: () => Navigator.of(context).pop(false),
-              ),       
+              ),
             ),
           ),
         ],

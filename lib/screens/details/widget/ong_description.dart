@@ -64,7 +64,7 @@ class OngDescription extends StatelessWidget {
                         child: Column(
                           children: [
                             Text(
-                              ong.ongResume,
+                              ong.ongDescription,
                               style: TextStyle(
                                 fontSize: 16.0,
                                 color: kFont,

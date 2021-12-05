@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/me/Projects/flutter-donation-app/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
+            "outputFile": "/home/me/Projects/projeto_finalizado/flutter-donation-app/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
             "map": [
                 {
                     "source": "/home/me/.gradle/caches/transforms-2/files-2.1/2e94107f30f39be366a17347c2bf100b/core-1.1.0/res/values-v16/values-v16.xml",

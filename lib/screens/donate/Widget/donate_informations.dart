@@ -20,7 +20,7 @@ class DonateInformations extends StatelessWidget {
               children: [
                 Container(
                   padding: EdgeInsets.only(
-                    bottom: kDefaultPadding ,
+                    bottom: kDefaultPadding,
                   ),
                   child: Column(
                     children: <Widget>[
@@ -36,9 +36,9 @@ class DonateInformations extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
                       Container(
                         padding: EdgeInsets.only(
                           top: kDefaultPadding - 15,
@@ -57,9 +57,7 @@ class DonateInformations extends StatelessWidget {
                           ],
                         ),
                       ),
-                    ]
-                  )
-                ),
+                    ])),
                 Container(
                   child: Column(
                     children: [
@@ -69,29 +67,25 @@ class DonateInformations extends StatelessWidget {
                           bottom: kDefaultPadding - 15,
                         ),
                         child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Text(
-                              'Pix:',
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              )
-                            ),
+                            Text('Pix:',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                )),
                             Container(
                               padding: EdgeInsets.only(
                                 left: kDefaultPadding - 15,
                               ),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    ong.pix,
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                    ),
+                              child: Row(children: [
+                                Text(
+                                  ong.ongPix,
+                                  style: TextStyle(
+                                    fontSize: 18,
                                   ),
-                                ]
-                              ),
+                                ),
+                              ]),
                             )
                           ],
                         ),
@@ -102,29 +96,25 @@ class DonateInformations extends StatelessWidget {
                           bottom: kDefaultPadding - 15,
                         ),
                         child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Text(
-                              'Banco:',
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              )
-                            ),
+                            Text('Banco:',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                )),
                             Container(
                               padding: EdgeInsets.only(
                                 left: kDefaultPadding - 15,
                               ),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    ong.bankName,
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                    ),
+                              child: Row(children: [
+                                Text(
+                                  ong.ongBankName,
+                                  style: TextStyle(
+                                    fontSize: 18,
                                   ),
-                                ]
-                              ),
+                                ),
+                              ]),
                             )
                           ],
                         ),
@@ -135,29 +125,25 @@ class DonateInformations extends StatelessWidget {
                           bottom: kDefaultPadding - 15,
                         ),
                         child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Text(
-                              'Conta:',
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              )
-                            ),
+                            Text('Conta:',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                )),
                             Container(
                               padding: EdgeInsets.only(
                                 left: kDefaultPadding - 15,
                               ),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    ong.bankAccount,
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                    ),
+                              child: Row(children: [
+                                Text(
+                                  ong.ongBankAccount,
+                                  style: TextStyle(
+                                    fontSize: 18,
                                   ),
-                                ]
-                              ),
+                                ),
+                              ]),
                             )
                           ],
                         ),
@@ -168,29 +154,25 @@ class DonateInformations extends StatelessWidget {
                           bottom: kDefaultPadding - 15,
                         ),
                         child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Text(
-                              'Agência:',
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              )
-                            ),
+                            Text('Agência:',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                )),
                             Container(
                               padding: EdgeInsets.only(
                                 left: kDefaultPadding - 15,
                               ),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    ong.bankAgency,
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                    ),
+                              child: Row(children: [
+                                Text(
+                                  ong.ongBankAccount,
+                                  style: TextStyle(
+                                    fontSize: 18,
                                   ),
-                                ]
-                              ),
+                                ),
+                              ]),
                             )
                           ],
                         ),
@@ -201,7 +183,7 @@ class DonateInformations extends StatelessWidget {
                 Positioned(
                   child: Container(
                     padding: EdgeInsets.only(
-                          top: kDefaultPadding - 5,
+                      top: kDefaultPadding - 5,
                     ),
                     height: 65,
                     width: 335,
@@ -215,7 +197,7 @@ class DonateInformations extends StatelessWidget {
                       ),
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => DonateConfirmScreen()));
+                            builder: (context) => DonateConfirmScreen()));
                       },
                       child: Text(
                         'Pronto',

@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_donation_app/constants/constants.dart';
+import 'package:flutter_donation_app/screens/create_account_screen.dart/create_account_screen.dart';
+import 'package:flutter_donation_app/screens/home/donor_home.dart';
 import 'package:flutter_donation_app/screens/login/login.dart';
 
 class PageContent extends StatelessWidget {
@@ -34,7 +36,29 @@ class PageContent extends StatelessWidget {
               )),
         ),
         Container(
-            height: 600,
+          padding: EdgeInsets.only(
+              top: kDefaultPadding + 10, right: kDefaultPadding),
+          child: TextButton(
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => LoginPage()));
+              },
+              child: Container(
+                  child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    'Login',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 16),
+                  ),
+                ],
+              ))),
+        ),
+        Container(
+            height: 800,
             padding: EdgeInsets.only(
               top: kDefaultPadding + 480,
             ),
@@ -54,33 +78,40 @@ class PageContent extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => LoginPage()));
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => DonorHomeScreen()));
                     },
                     child: Text(
-                      'Criar uma conta',
+                      'Comece a Doar',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
-                        fontSize: 18,
+                        fontSize: 20,
                       ),
                     ),
                   ),
                 ]),
               ),
               Container(
-                  child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Login',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 18),
-                  ),
-                ],
-              ))
+                child: TextButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => CreateAccountPage()));
+                    },
+                    child: Container(
+                        child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Cadastrar ONG',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontSize: 16),
+                        ),
+                      ],
+                    ))),
+              ),
             ]))
       ],
     ));
