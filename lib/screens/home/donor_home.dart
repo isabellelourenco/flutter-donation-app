@@ -1,10 +1,10 @@
+import 'dart:core';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_donation_app/constants/constants.dart';
 import 'package:flutter_donation_app/models/ong.dart';
 import 'package:flutter_donation_app/screens/home/widget/list_title.dart';
 import 'package:flutter_donation_app/screens/home/widget/ong_item.dart';
 import 'package:flutter_donation_app/screens/home/widget/top_bar.dart';
-import 'package:flutter_donation_app/screens/update_account_donnor/update_account_donnor.dart';
 import 'package:flutter_donation_app/service/http_service.dart';
 
 class DonorHomeScreen extends StatefulWidget {
@@ -35,11 +35,12 @@ class _DonorHomeScreenState extends State<DonorHomeScreen> {
                     if (snapshot.hasData) {
                       List<Ong>? posts = snapshot.data;
                       print("tentando montar o componente . . . ");
+                      var listView = ListView(
+                        children:
+                            posts!.map((Ong ong) => OngItem(ong)).toList(),
+                      );
                       return Expanded(
-                        child: ListView(
-                          children:
-                              posts!.map((Ong ong) => OngItem(ong)).toList(),
-                        ),
+                        child: listView,
                       );
                     } else {
                       return Center(child: CircularProgressIndicator());

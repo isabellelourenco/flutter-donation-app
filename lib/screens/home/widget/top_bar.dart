@@ -67,9 +67,7 @@ class TopBar extends StatelessWidget {
                   top: kDefaultPadding + 35,
                 ),
                 child: Row(
-                  children: <Widget>[
-                    Image.asset("assets/images/appicon.png")
-                  ],
+                  children: <Widget>[Image.asset("assets/images/appicon.png")],
                 ),
               ),
               Positioned(

@@ -485,13 +485,13 @@ class _CreateOngBodyState extends State<CreateOngBody> {
                                   ongDescription:
                                       _formData['ongDescription'] ?? '',
                                   ongSite: _formData['ongSite'] ?? '',
+                                  ongEmail: _formData['ongEmail'] ?? '',
                                   ongPix: _formData['ongPix'] ?? '',
                                   ongBankName: _formData['ongBankName'] ?? '',
                                   ongBankAgency:
                                       _formData['ongBankAgency'] ?? '',
                                   ongBankAccount:
                                       _formData['ongBankAccount'] ?? '',
-                                  ongEmail: _formData['ongBankAccount'] ?? '',
                                   ongImg: "assets/images/amigos.png",
                                 );
 
